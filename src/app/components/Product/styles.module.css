@@ -1,0 +1,58 @@
+.card {
+  display: inline-block;
+  background-color: #09263d;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+  width: 250px; /* Tamaño determinado */
+  margin-right: 20px; /* Ajusta la separación horizontal entre los componentes */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left:20px ;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(182, 182, 182, 0.596);
+}
+
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.card .counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.card .counter .button {
+  background-color: #0af031;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.card .counter .button:hover {
+  background-color: #3568af;
+}
+
+.card .counter .count {
+  font-size: 20px;
+  font-weight: bold;
+}

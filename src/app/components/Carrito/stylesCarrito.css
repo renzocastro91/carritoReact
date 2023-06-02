@@ -1,0 +1,21 @@
+.cartContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-right:15px ;
+  margin-top: 10px;
+}
+
+.cartIcon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.cartTotal {
+  color: #ff4500;
+  font-size: 25px;
+}

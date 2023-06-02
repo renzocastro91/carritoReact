@@ -1,28 +1,66 @@
-import Artist from "../../components/Artist";
-import Search from "../../components/Search";
+// Componente App
+import { useState, useEffect } from 'react';
+import Product from "../../components/Product";
+import ProductForm from "../../components/Form";
 import "./styles.css";
+import Cart from '../../components/Carrito';
+
+interface Product {
+  name: string;
+  desc: string;
+  price: number;
+  cant: number;
+  tot: number;
+}
 
 function App() {
+  const [productsList, setProductsList] = useState<Product[]>([]);
+  const [total, setTotal] = useState(0);
+
+  const handleAddProduct = (newProduct: Product) => {
+    setProductsList([...productsList, newProduct]);
+  };
+
+  const handleTotChange = (index: number, newTot: number) => {
+    const updatedProducts = [...productsList];
+    updatedProducts[index].tot = newTot;
+    setProductsList(updatedProducts);
+  };
+
+  useEffect(() => {
+    const totalPrice = productsList.reduce(
+      (acc, product) => acc + product.tot,
+      0
+    );
+    setTotal(totalPrice);
+  }, [productsList]);
+
   return (
     <main>
       <h1>Carrito APP</h1>
       <div className="container">
-      <div className="module1">
-        <p>Hola Mundillo</p>
-        <Artist name="Justin Bieber" category="Artista" image = "https://www.rionegro.com.ar/wp-content/uploads/2022/02/Justin-1.jpg" views={0} />
-        <Artist name="Dua Lipa" category="Artista"  image = "https://www.losandes.com.ar/resizer/9mr-cBxbzky_uMEbwZxP7UUvoP0=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/MPUTSVC5IJDKPJLE7LBUWGLHE4.png" views={0}/> 
+        <div className="module1">
+          <div>
+            <ProductForm onAddProduct={handleAddProduct} />
+          </div>
+        </div>
+        <div className="module2">
+        <Cart cartIcon="https://cdn-icons-png.flaticon.com/512/3649/3649583.png" total={total}/>
+          <h2>Lista de Productos</h2>
+          {productsList.map((product: Product, index: number) => (
+            <div className="container2" key={index}>
+              <Product
+                name={product.name}
+                description={product.desc}
+                cant={product.cant}
+                price={product.price}
+                tot={product.tot}
+                onTotChange={(newTot: number) => handleTotChange(index, newTot)}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="module2">
-        <Search></Search>
-        <h1 className="title">Music App</h1>
-        <Artist name="Justin Bieber" category="Artista" image = "https://www.rionegro.com.ar/wp-content/uploads/2022/02/Justin-1.jpg" views={0} />
-        <Artist name="Dua Lipa" category="Artista"  image = "https://www.losandes.com.ar/resizer/9mr-cBxbzky_uMEbwZxP7UUvoP0=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/MPUTSVC5IJDKPJLE7LBUWGLHE4.png" views={0}/> 
-        <Artist name="Dillom" category="Artista"  image ="https://media.lacapital.com.ar/p/65f5b8343356343037ab39e9b25ebfa2/adjuntos/203/imagenes/030/530/0030530243/1200x675/smart/dillom1jpg.jpg" views={0}/>
-        <Artist name="Chaqueño Palavecino" category="Artista"  image ="https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2021/09/23/614ca532de6c8.r_d.3120-2080-0.jpeg" views={0}/>
-        <Artist name="Marilyn Manson" category="Artista"  image ="https://viapais.com.ar/resizer/s6gmAlqKUZyQPBnmfdnxSXC6B8c=/980x640/smart/filters:quality(75):format(webp)/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/MNRWGOBWMNQWGN3FMFSDCODDGA.jpg" views={0}/>
-      </div>
-      </div>
-      
     </main>
   );
 }
