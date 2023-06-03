@@ -1,28 +1,28 @@
-import { useState } from 'react';
-import styles from './style.module.css';
+import { useState } from 'react'
+import styles from './style.module.css'
 
 type Product = {
-  name: string;
-  desc: string;
-  price: number;
-  cant: number;
-  tot: number;
-};
+  name: string
+  desc: string
+  price: number
+  cant: number
+  tot: number
+}
 
 type ProductFormProps = {
-  onAddProduct: (newProduct: Product) => void;
+  onAddProduct: (newProduct: Product) => void
 };
 
 function ProductForm(props: ProductFormProps) {
-  const [productName, setProductName] = useState('');
-  const [productDescription, setProductDescription] = useState('');
-  const [productPrice, setProductPrice] = useState<number>(0);
-  const [error, setError] = useState('');
+  const [productName, setProductName] = useState('')
+  const [productDescription, setProductDescription] = useState('')
+  const [productPrice, setProductPrice] = useState<number>(0)
+  const [error, setError] = useState('')
 
   const handleAddProduct = () => {
     if (!productName || !productPrice) {
-      setError('El nombre del producto y el precio son obligatorios');
-      return;
+      setError('El nombre del producto y el precio son obligatorios')
+      return
     }
 
     const newProduct: Product = {
@@ -33,12 +33,12 @@ function ProductForm(props: ProductFormProps) {
       tot: 0
     };
 
-    props.onAddProduct(newProduct);
-    setProductName('');
-    setProductDescription('');
-    setProductPrice(0);
-    setError('');
-  };
+    props.onAddProduct(newProduct)
+    setProductName('')
+    setProductDescription('')
+    setProductPrice(0)
+    setError('')
+  }
 
   return (
     <div className={styles.container}>
@@ -67,4 +67,4 @@ function ProductForm(props: ProductFormProps) {
   );
 }
 
-export default ProductForm;
+export default ProductForm

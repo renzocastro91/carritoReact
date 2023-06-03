@@ -1,39 +1,38 @@
-// Componente App
-import { useState, useEffect } from 'react';
-import Product from "../../components/Product";
-import ProductForm from "../../components/Form";
-import "./styles.css";
-import Cart from '../../components/Carrito';
+import { useState, useEffect } from 'react'
+import Product from "../../components/Product"
+import ProductForm from "../../components/Form"
+import "./styles.css"
+import Cart from '../../components/Carrito'
 
-interface Product {
-  name: string;
-  desc: string;
-  price: number;
-  cant: number;
-  tot: number;
-}
+type ProductType = {
+  name: string
+  desc: string
+  price: number
+  cant: number
+  tot: number
+};
 
 function App() {
-  const [productsList, setProductsList] = useState<Product[]>([]);
-  const [total, setTotal] = useState(0);
+  const [productsList, setProductsList] = useState<ProductType[]>([])
+  const [total, setTotal] = useState(0)
 
-  const handleAddProduct = (newProduct: Product) => {
-    setProductsList([...productsList, newProduct]);
-  };
+  function handleAddProduct(newProduct: ProductType) {
+    setProductsList([...productsList, newProduct])
+  }
 
-  const handleTotChange = (index: number, newTot: number) => {
-    const updatedProducts = [...productsList];
-    updatedProducts[index].tot = newTot;
-    setProductsList(updatedProducts);
-  };
+  function handleTotChange(index: number, newTot: number) {
+    const updatedProducts = [...productsList]
+    updatedProducts[index].tot = newTot
+    setProductsList(updatedProducts)
+  }
 
   useEffect(() => {
     const totalPrice = productsList.reduce(
       (acc, product) => acc + product.tot,
       0
-    );
-    setTotal(totalPrice);
-  }, [productsList]);
+    )
+    setTotal(totalPrice)
+  }, [productsList])
 
   return (
     <main>
@@ -45,9 +44,9 @@ function App() {
           </div>
         </div>
         <div className="module2">
-        <Cart cartIcon="https://cdn-icons-png.flaticon.com/512/3649/3649583.png" total={total}/>
-          <h2 className='h2M2'>Lista de Productos</h2>
-          {productsList.map((product: Product, index: number) => (
+          <Cart cartIcon="https://cdn-icons-png.flaticon.com/512/3649/3649583.png" total={total} />
+          <h2 className="h2M2">Lista de Productos</h2>
+          {productsList.map((product: ProductType, index: number) => (
             <div className="container2" key={index}>
               <Product
                 name={product.name}
@@ -55,7 +54,7 @@ function App() {
                 cant={product.cant}
                 price={product.price}
                 tot={product.tot}
-                onTotChange={(newTot: number) => handleTotChange(index, newTot)}
+                onTotChange={function(newTot: number) { handleTotChange(index, newTot); }}
               />
             </div>
           ))}
@@ -65,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
