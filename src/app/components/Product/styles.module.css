@@ -1,41 +1,52 @@
 .card {
   display: inline-block;
-  background-color: #09263d;
+  background-image: url('https://img.freepik.com/foto-gratis/desenfoque-abstracto-naturaleza-verde_1150-27263.jpg?w=1380&t=st=1685749142~exp=1685749742~hmac=146a60aacc083c38b8ee40e5defc6cd043268a26bb169a773e782c053551b5c0');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 16px;
   margin-bottom: 16px;
   width: 250px; /* Tamaño determinado */
   margin-right: 20px; /* Ajusta la separación horizontal entre los componentes */
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left:20px ;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left:10px ;
 }
 
-.card:hover {
-  box-shadow: 0 4px 8px rgba(182, 182, 182, 0.596);
+
+.h3Pr{
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.pPr{
+  color: #000;
+}
 
 .card h3 {
-  font-size: 18px;
+  font-size: 23px;
   margin-bottom: 8px;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 8px;
 }
 
 .card .counter {
+  font-size: 20px;
   display: flex;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #000;
   align-items: center;
   justify-content: space-between;
   margin-top: 16px;
 }
 
 .card .counter .button {
-  background-color: #0af031;
+  background-color: #16d636;
   color: #000000;
   border: none;
   border-radius: 4px;
@@ -49,10 +60,44 @@
 }
 
 .card .counter .button:hover {
-  background-color: #3568af;
+  background-color: #080808;
+  color:white;
+  transition-delay: 0.5s
 }
 
 .card .counter .count {
   font-size: 20px;
   font-weight: bold;
+}
+
+.buttonAdd {
+  font-size: 18px;
+  background-image: url('https://img.freepik.com/foto-gratis/textura-naranja_95678-73.jpg?w=1380&t=st=1685749936~exp=1685750536~hmac=e6f8d6ddb55dd2da1d3bc5f3d15fb1e8efdcc9aee537c3640bcf152c3cd886b9');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
+  color: #0c0c0c;
+  background-color: #390d8b;
+  border-radius: 10px;
+  border-color: #000;
+  margin-top: 25px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.buttonAdd:hover{
+  background-color: #8e6bce;
+  transform: scale(1.05);
+}
+
+.buttonAdd::before{
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }

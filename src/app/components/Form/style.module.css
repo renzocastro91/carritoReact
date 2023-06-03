@@ -5,35 +5,47 @@
   }
   
   h2 {
-    font-size: 24px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 35px;
     margin-bottom: 16px;
+    color: #bafd02;
+  }
+
+  .h2M1{
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 35px;
+    margin-bottom: 16px;
+    color: #ffffff;
   }
   
   input {
 
     padding: 8px;
     margin-bottom: 8px;
-    border: 1px solid #f72d2d;
+    border: 1px solid #f75a00;
     border-radius: 4px;
   }
   
   p {
-    color: rgb(255, 255, 255);
+    color: rgb(1, 110, 253);
     margin-bottom: 8px;
   }
   
   .button {
     padding: 8px 16px;
-    background-color: #e9a004;
-    color: #fefffe;
+    background-color: #bafd02;
+    color: #000000;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .button:hover {
-    background-color: #3d3d3d;
+    background-color: #86b603;
   }
   

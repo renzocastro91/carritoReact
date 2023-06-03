@@ -1,16 +1,17 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import styles from './style.module.css';
-interface Product {
+
+type Product = {
   name: string;
   desc: string;
   price: number;
   cant: number;
   tot: number;
-}
+};
 
-interface ProductFormProps {
+type ProductFormProps = {
   onAddProduct: (newProduct: Product) => void;
-}
+};
 
 function ProductForm(props: ProductFormProps) {
   const [productName, setProductName] = useState('');
@@ -41,8 +42,7 @@ function ProductForm(props: ProductFormProps) {
 
   return (
     <div className={styles.container}>
-      
-      <h2>Cargar Producto</h2>
+      <h2 className='h2M1'>Cargar Producto</h2>
       {error && <p>{error}</p>}
       <input
         type="text"

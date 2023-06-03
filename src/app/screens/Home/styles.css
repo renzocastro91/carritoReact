@@ -12,6 +12,11 @@
   transition: filter 300ms;
 }
 
+ h1{
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #00fd15;
+ }
 .logo:hover {
   filter: drop-shadow(0 0 2em #131547aa);
 }
@@ -62,8 +67,12 @@
   flex: 0 0 25%;
   border-width: 2px;
   border-style: solid;
-  border-color: rgb(201, 196, 196);
+  border-color: rgb(173, 169, 169);
   border-radius: 5px;
+  background-image: url('https://img.freepik.com/foto-gratis/fiesta-halloween_23-2148603731.jpg?w=1380&t=st=1685747678~exp=1685748278~hmac=7a8b9840347a4d4635b4ab71df7a32256fb83a12a1e2a598dd1c66831be4197c');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
 }
 
 .module2 {
@@ -73,10 +82,22 @@
   flex: 1;
   border-width: 2px;
   border-style: solid;
-  border-color: rgb(152, 190, 248);
+  border-color: rgb(110, 133, 168);
   border-radius: 5px;
+  background-image: url('https://img.freepik.com/foto-gratis/pizarra-verde_1205-377.jpg?1&w=1380&t=st=1685748918~exp=1685749518~hmac=0d133b4745f65f2136f3fc627bb49f9086ecbc3f6b7aaf776af3b949231ab051');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: auto;
 }
 
 .card {
   padding: 2em;
+}
+
+.h2M2{
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 35px;
+    margin-bottom: 16px;
+    color: #fce300;
 }

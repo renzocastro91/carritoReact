@@ -46,7 +46,7 @@ function App() {
         </div>
         <div className="module2">
         <Cart cartIcon="https://cdn-icons-png.flaticon.com/512/3649/3649583.png" total={total}/>
-          <h2>Lista de Productos</h2>
+          <h2 className='h2M2'>Lista de Productos</h2>
           {productsList.map((product: Product, index: number) => (
             <div className="container2" key={index}>
               <Product

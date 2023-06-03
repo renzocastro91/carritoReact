@@ -1,4 +1,3 @@
-// Componente Product
 import { useState } from "react";
 import styles from "./styles.module.css";
 
@@ -17,34 +16,33 @@ function Product(props: ProductProps) {
   const [tot, setTot] = useState(props.tot);
   const [price, setPrice] = useState(props.price);
 
-  const handleTot = () => {
+  function handleTot() {
     const newTot = cant * price;
     setTot(newTot);
     props.onTotChange(newTot);
   }
 
-  const handleIncrement = () => {
+  function handleIncrement() {
     setCant(cant + 1);
-  };
+  }
 
-  const handleDecrement = () => {
+  function handleDecrement() {
     if (cant > 0) {
       setCant(cant - 1);
     }
-  };
+  }
 
   return (
     <div className={styles.card}>
-      <h3>{props.name}</h3>
-      <p>{props.description}</p>
-      <p>${props.price}</p>
+      <h3 className={styles.h3Pr}>{props.name}</h3>
+      <p className={styles.pPr}>{props.description}</p>
+      <p className={styles.pPr}>${props.price}</p>
       <div className={styles.counter}>
         <button className={styles.button} onClick={handleDecrement}>-</button>
         <span>{cant}</span>
-        <span>{tot}</span>
         <button className={styles.button} onClick={handleIncrement}>+</button>
       </div>
-      <button className={styles.button} onClick={handleTot}>Agregar al carrito</button>
+      <button className={styles.buttonAdd} onClick={handleTot}>Agregar al carrito</button>
     </div>
   );
 }
