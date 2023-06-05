@@ -3,12 +3,11 @@ name: sat hello
 on:
   push:
     branches:
-      -master
+      -main
 
 jobs:
   hello_world:
     runs-on: ubuntu-22.04
     steps:
       - name: Echo the message
-        run: |
-          echo "Hola Mundo"
+        run: echo "Hola Mundo"
