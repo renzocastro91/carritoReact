@@ -15,7 +15,7 @@
  h1{
   font-family: 'Montserrat', sans-serif;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  color: #00fd15;
+  color: #ff7627;
  }
 .logo:hover {
   filter: drop-shadow(0 0 2em #131547aa);
@@ -65,11 +65,11 @@
   border-radius: 5px;
   width: 25%;
   flex: 0 0 25%;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
   border-color: rgb(173, 169, 169);
   border-radius: 5px;
-  background-image: url('https://img.freepik.com/foto-gratis/fiesta-halloween_23-2148603731.jpg?w=1380&t=st=1685747678~exp=1685748278~hmac=7a8b9840347a4d4635b4ab71df7a32256fb83a12a1e2a598dd1c66831be4197c');
+  background-image: url('../../source/img/module1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: auto;
@@ -80,11 +80,11 @@
   background-color: #0000004f;
   border-radius: 5px;
   flex: 1;
-  border-width: 2px;
+  border-width: 1px;
   border-style: solid;
-  border-color: rgb(110, 133, 168);
-  border-radius: 5px;
-  background-image: url('https://img.freepik.com/foto-gratis/fondo-papel-tapiz-colorido-borroso-artistico_58702-8367.jpg?w=1380&t=st=1685803056~exp=1685803656~hmac=264c17b45176c83bc9956a0eb344ce17c5e755511519bd071abee508c4d646bb');
+  border-color: rgb(0, 0, 0);
+  border-radius: 3px;
+  background-image: url('../../source/img/module2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: auto;
@@ -99,5 +99,5 @@
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 35px;
     margin-bottom: 16px;
-    color: #fce300;
+    color: #ffffff;
 }

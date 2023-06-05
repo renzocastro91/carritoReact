@@ -1,8 +1,10 @@
 .card {
   display: inline-block;
-  background-image: url('https://img.freepik.com/foto-gratis/desenfoque-abstracto-naturaleza-verde_1150-27263.jpg?w=1380&t=st=1685749142~exp=1685749742~hmac=146a60aacc083c38b8ee40e5defc6cd043268a26bb169a773e782c053551b5c0');
+  background-image: url('../../source/img/card.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  border-width: 3px;
+  border-color:#000;
   width: auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -46,9 +48,10 @@
 }
 
 .card .counter .button {
-  background-color: #16d636;
+  background-color: #04ff2e;
   color: #000000;
-  border: none;
+  border-width: 1px;
+  border-color:#000;
   border-radius: 4px;
   width: 32px;
   height: 32px;
@@ -57,12 +60,13 @@
   align-items: center;
   font-size: 16px;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .card .counter .button:hover {
   background-color: #080808;
   color:white;
-  transition-delay: 0.5s
+  transform: scale(0.85);
 }
 
 .card .counter .count {
@@ -71,33 +75,23 @@
 }
 
 .buttonAdd {
-  font-size: 18px;
-  background-image: url('https://img.freepik.com/foto-gratis/textura-naranja_95678-73.jpg?w=1380&t=st=1685749936~exp=1685750536~hmac=e6f8d6ddb55dd2da1d3bc5f3d15fb1e8efdcc9aee537c3640bcf152c3cd886b9');
+  font-size: 15px;
+  background-color: #0d0e0e;
   background-repeat: no-repeat;
   background-size: cover;
+  border-width: 1px;
   width: auto;
-  color: #0c0c0c;
-  background-color: #390d8b;
+  color: #ffffff;
   border-radius: 10px;
   border-color: #000;
   margin-top: 25px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
 }
 
 .buttonAdd:hover{
-  background-color: #8e6bce;
-  transform: scale(1.05);
+  background-color:#ffffff;
+  color:#0f0f0f;
+  transform: scale(0.95);
 }
 
-.buttonAdd::before{
-  content: "";
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background-color: rgba(0, 0, 0, 0.2);
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}

@@ -9,7 +9,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 35px;
     margin-bottom: 16px;
-    color: #bafd02;
+    color: #464545;
   }
 
   .h2M1{
@@ -17,7 +17,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 35px;
     margin-bottom: 16px;
-    color: #ffffff;
+    color: #504d4d;
   }
   
   input {
@@ -35,17 +35,21 @@
   
   .button {
     padding: 8px 16px;
-    background-color: #bafd02;
-    color: #000000;
+    background-color: #1877F2;
+    border-width: 5px;
+    border-color:#000;
+    color: #FFFFFF;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
   }
   
   .button:hover {
-    background-color: #86b603;
+    background-color: #606770;
+    transform: scale(0.95);
   }
   

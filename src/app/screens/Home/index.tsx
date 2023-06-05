@@ -1,38 +1,65 @@
-import { useState, useEffect } from 'react'
-import Product from "../../components/Product"
-import ProductForm from "../../components/Form"
-import "./styles.css"
-import Cart from '../../components/Carrito'
+import { useState, useEffect } from 'react';
+import Product from "../../components/Product";
+import ProductForm from "../../components/Form";
+import "./styles.css";
+import Cart from '../../components/Carrito';
 
 type ProductType = {
-  name: string
-  desc: string
-  price: number
-  cant: number
-  tot: number
+  name: string;
+  desc: string;
+  price: number;
+  cant: number;
+  tot: number;
 };
 
 function App() {
-  const [productsList, setProductsList] = useState<ProductType[]>([])
-  const [total, setTotal] = useState(0)
+  const [productsList, setProductsList] = useState<ProductType[]>([]);
+  const [total, setTotal] = useState(0);
 
   function handleAddProduct(newProduct: ProductType) {
-    setProductsList([...productsList, newProduct])
+    setProductsList([...productsList, newProduct]);
   }
 
   function handleTotChange(index: number, newTot: number) {
-    const updatedProducts = [...productsList]
-    updatedProducts[index].tot = newTot
-    setProductsList(updatedProducts)
+    const updatedProducts = [...productsList];
+    updatedProducts[index].tot = newTot;
+    setProductsList(updatedProducts);
   }
 
-  useEffect(() => {
-    const totalPrice = productsList.reduce(
-      (acc, product) => acc + product.tot,
-      0
-    )
-    setTotal(totalPrice)
-  }, [productsList])
+  function calculateTotalPrice() {
+    const totalPrice = productsList.reduce((acc, product) => acc + product.tot, 0);
+    setTotal(totalPrice);
+  }
+
+  function preloadProducts() {
+    const preloadedProducts: ProductType[] = [
+      {
+        name: "Pan x1kg",
+        desc: "Alimento",
+        price: 1500,
+        cant: 0,
+        tot: 0
+      },
+      {
+        name: "Gaseosa Coca Cola xU",
+        desc: "Bebida",
+        price: 3000,
+        cant: 0,
+        tot: 0
+      },
+      {
+        name: "Cereales x500gr",
+        desc: "Alimento",
+        price: 600,
+        cant: 0,
+        tot: 0
+      }
+    ];
+    setProductsList(preloadedProducts);
+  }
+
+  useEffect(calculateTotalPrice, [productsList]);
+  useEffect(preloadProducts, []);
 
   return (
     <main>
@@ -64,4 +91,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
