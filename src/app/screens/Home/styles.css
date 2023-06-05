@@ -61,15 +61,14 @@
 }
 
 .module1 {
-  background-color: #111605;
+  background-color: #464343da;
   border-radius: 5px;
   width: 25%;
   flex: 0 0 25%;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(173, 169, 169);
+  border-color: rgb(126, 126, 126);
   border-radius: 5px;
-  background-image: url('../../source/img/module1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: auto;
@@ -77,14 +76,13 @@
 
 .module2 {
   display: inline-block;
-  background-color: #0000004f;
+  background-color: #73ff0050;
   border-radius: 5px;
   flex: 1;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(0, 0, 0);
+  border-color: rgb(93, 145, 45);
   border-radius: 3px;
-  background-image: url('../../source/img/module2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: auto;
