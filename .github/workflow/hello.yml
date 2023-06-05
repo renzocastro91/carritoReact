@@ -1,0 +1,15 @@
+name: sat hello
+
+on:
+  push:
+    branches:
+      -master
+  
+
+jobs:
+  hello_world:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Echo the message
+      run: |
+        echo "Hola Mundo"
